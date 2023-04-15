@@ -15,7 +15,7 @@ function getSeason(date) {
   if(!date) {
     return 'Unable to determine the time of year!'
   }
-  if(!(date instanceof Date)) {
+  if(Object.keys(date).includes('toString')) {
     throw new Error ('Invalid date!')
   }
   if(Object.prototype.toString.call(date) === '[object Date]') {
